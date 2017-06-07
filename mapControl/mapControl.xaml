@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="mapControl"
+	xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 mc:Ignorable="d" 
+			 d:DesignHeight="300" d:DesignWidth="300">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="53*"/>
+			<ColumnDefinition Width="7*"/>
+		</Grid.ColumnDefinitions>
+		<m:Map CredentialsProvider="AnLhbvAfMYjZpx1jND-puE-kSqaXmm0IiY_K_1Cp6zE0VBjk73F6TS0-Y1EOIeqN" Center="25.30, 45.56" ZoomLevel="5.5" x:Name="myMap" Grid.ColumnSpan="2"/>
+		<StackPanel Orientation="Vertical" Opacity="0.7" HorizontalAlignment="Right" Margin="0,0,0,228" Width="42" Grid.ColumnSpan="2">
+			<Button x:Name="btnPlus" Click="Plus_Click" Margin="5,5,5,5">
+				<TextBlock Width="15" TextAlignment="Center"><Run Text="+"/></TextBlock>
+			</Button>
+			<Button x:Name="btnMinus" Click="Minus_Click" Margin="5,5,5,5">
+				<TextBlock Width="15" TextAlignment="Center"><Run Text="-"/></TextBlock>
+			</Button>
+		</StackPanel>
+	</Grid>
+</UserControl>

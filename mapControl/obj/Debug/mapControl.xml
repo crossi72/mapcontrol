@@ -1,0 +1,183 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+mapControl
+</name>
+</assembly>
+<members>
+<member name="M:mapControl.mapControl.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:mapControl.mapControl">
+	<summary>
+mapControl
+</summary>
+</member><member name="P:mapControl.My.Resources.Resources.ResourceManager">
+	<summary>
+  Restituisce l'istanza di ResourceManager nella cache utilizzata da questa classe.
+</summary>
+</member><member name="P:mapControl.My.Resources.Resources.Culture">
+	<summary>
+  Esegue l'override della proprietà CurrentUICulture del thread corrente per tutte le
+  ricerche di risorse eseguite utilizzando questa classe di risorse fortemente tipizzata.
+</summary>
+</member><member name="T:mapControl.My.Resources.Resources">
+	<summary>
+  Classe di risorse fortemente tipizzata per la ricerca di stringhe localizzate e così via.
+</summary>
+</member><member name="M:mapControl.mapControl.ClearMap">
+	<summary>
+ remove every object from the map
+ </summary>
+	<remarks></remarks>
+</member><member name="M:mapControl.mapControl.DeleteElement(System.String)">
+	<summary>
+ Remove an element from the map
+ </summary>
+	<param name="elementName"></param>
+	<remarks></remarks>
+</member><member name="M:mapControl.mapControl.AddLine(System.String,System.Windows.Media.Color,System.Double,System.Double,System.Double,System.Double)">
+	<summary>
+ add a bar to a map
+ </summary>
+	<param name="polygonName">name of the object</param>
+	<param name="color">color of bar</param>
+	<param name="latitude1">latitude of first point</param>
+	<param name="longitude1">longitude of first point</param>
+	<param name="latitude2">latitude of second point</param>
+	<param name="longitude2">longitude of second point</param>
+	<remarks></remarks>
+</member><member name="M:mapControl.mapControl.AddPolygon(System.String,System.Windows.Media.Color,mapControl.mapSupport.coordinate,mapControl.mapSupport.coordinate,mapControl.mapSupport.coordinate)">
+	<summary>
+ add a polygon to a map
+ </summary>
+	<param name="polygonName">name of the object</param>
+	<param name="color">color of polygon</param>
+	<param name="x">coordinates of first vertice of polygon</param>
+	<param name="y">coordinates of second vertice of polygon</param>
+	<param name="z">coordinates of third vertice of polygon</param>
+	<remarks></remarks>
+</member><member name="M:mapControl.mapControl.AddTriangle(System.String,System.Windows.Media.Color,mapControl.mapSupport.coordinate,mapControl.mapSupport.coordinate,mapControl.mapSupport.coordinate)">
+	<summary>
+ add a triangle to a map
+ </summary>
+	<param name="polygonName">name of the object</param>
+	<param name="color">color of polygon</param>
+	<param name="x">coordinates of first vertice of polygon</param>
+	<param name="y">coordinates of second vertice of polygon</param>
+	<param name="z">coordinates of third vertice of polygon</param>
+	<remarks></remarks>
+</member><member name="M:mapControl.mapControl.AddTriangle(System.String,System.Windows.Media.Color,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+	<summary>
+ add a triangle to a map
+ </summary>
+	<param name="polygonName">name of the object</param>
+	<param name="color">color of triangle</param>
+	<param name="latitude1">latitude of first point</param>
+	<param name="longitude1">longitude of first point</param>
+	<param name="latitude2">latitude of second point</param>
+	<param name="longitude2">longitude of second point</param>
+	<param name="latitude3">latitude of third point</param>
+	<param name="longitude3">longitude of third point</param>
+	<remarks></remarks>
+</member><member name="M:mapControl.mapControl.AddBar(System.String,System.Windows.Media.Color,System.Double,System.Double,System.Double,System.Double)">
+	<summary>
+ add a bar to a map
+ </summary>
+	<param name="polygonName">name of the object</param>
+	<param name="color">color of bar</param>
+	<param name="latitude">latitude of bar</param>
+	<param name="longitude">longitude of bar</param>
+	<param name="width">width of bar</param>
+	<param name="height">height of bar</param>
+	<remarks></remarks>
+</member><member name="M:mapControl.mapControl.Plus_Click(System.Object,System.Windows.RoutedEventArgs)">
+	<summary>
+ increase zoom level
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:mapControl.mapControl.Minus_Click(System.Object,System.Windows.RoutedEventArgs)">
+	<summary>
+ reduce zoom level
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:mapControl.mapSupport.ClearMap(Microsoft.Maps.MapControl.WPF.Map)">
+	<summary>
+ remove every object from the map
+ </summary>
+	<param name="myMap">map to clear</param>
+	<remarks></remarks>
+</member><member name="M:mapControl.mapSupport.AddLine(Microsoft.Maps.MapControl.WPF.Map,System.String,System.Windows.Media.Color,System.Double,System.Double,System.Double,System.Double)">
+	<summary>
+ add a bar to a map
+ </summary>
+	<param name="myMap">map to draw on</param>
+	<param name="polygonName">name of the object</param>
+	<param name="color">color of bar</param>
+	<param name="latitude1">latitude of first point</param>
+	<param name="longitude1">longitude of first point</param>
+	<param name="latitude2">latitude of second point</param>
+	<param name="longitude2">longitude of second point</param>
+	<remarks></remarks>
+</member><member name="M:mapControl.mapSupport.AddBar(Microsoft.Maps.MapControl.WPF.Map,System.String,System.Windows.Media.Color,System.Double,System.Double,System.Double,System.Double)">
+	<summary>
+ add a bar to a map
+ </summary>
+	<param name="myMap">map to draw on</param>
+	<param name="polygonName">name of the object</param>
+	<param name="color">color of bar</param>
+	<param name="latitude">latitude of bar</param>
+	<param name="longitude">longitude of bar</param>
+	<param name="width">width of bar</param>
+	<param name="height">height of bar</param>
+	<remarks></remarks>
+</member><member name="M:mapControl.mapSupport.AddTriangle(Microsoft.Maps.MapControl.WPF.Map,System.String,System.Windows.Media.Color,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+	<summary>
+ add a triangle to a map
+ </summary>
+	<param name="myMap">map to draw on</param>
+	<param name="polygonName">name of the object</param>
+	<param name="color">color of triangle</param>
+	<param name="latitude1">latitude of first point</param>
+	<param name="longitude1">longitude of first point</param>
+	<param name="latitude2">latitude of second point</param>
+	<param name="longitude2">longitude of second point</param>
+	<param name="latitude3">latitude of third point</param>
+	<param name="longitude3">longitude of third point</param>
+	<remarks></remarks>
+</member><member name="M:mapControl.mapSupport.AddTriangle(Microsoft.Maps.MapControl.WPF.Map,System.String,System.Windows.Media.Color,mapControl.mapSupport.coordinate,mapControl.mapSupport.coordinate,mapControl.mapSupport.coordinate)">
+	<summary>
+ add a triangle to a map
+ </summary>
+	<param name="myMap">map to draw on</param>
+	<param name="polygonName">name of the object</param>
+	<param name="color">color of triangle</param>
+	<param name="x">coordinates of first point</param>
+	<param name="y">coordinates of second point</param>
+	<param name="z">coordinates of third point</param>
+	<remarks></remarks>
+</member><member name="M:mapControl.mapSupport.DeleteElement(Microsoft.Maps.MapControl.WPF.Map,System.String)">
+	<summary>
+ Remove an element from the map
+ </summary>
+	<param name="myMap"></param>
+	<param name="elementName"></param>
+	<remarks></remarks>
+</member><member name="M:mapControl.mapSupport.AddPolygon(Microsoft.Maps.MapControl.WPF.Map,System.String,System.Windows.Media.Color,mapControl.mapSupport.coordinate[])">
+	<summary>
+ add a polygon to a map
+ </summary>
+	<param name="myMap">map to draw on</param>
+	<param name="polygonName">name of the object</param>
+	<param name="color">color of polygon</param>
+	<param name="coordinate">coordinates of vertices of polygon</param>
+	<remarks></remarks>
+</member>
+</members>
+</doc>
