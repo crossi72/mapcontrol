@@ -11,7 +11,7 @@
 			<ColumnDefinition Width="53*"/>
 			<ColumnDefinition Width="7*"/>
 		</Grid.ColumnDefinitions>
-		<m:Map CredentialsProvider="AnLhbvAfMYjZpx1jND-puE-kSqaXmm0IiY_K_1Cp6zE0VBjk73F6TS0-Y1EOIeqN" Center="25.30, 45.56" ZoomLevel="5.5" x:Name="myMap" Grid.ColumnSpan="2"/>
+        <m:Map Culture="en-US" CredentialsProvider="AnLhbvAfMYjZpx1jND-puE-kSqaXmm0IiY_K_1Cp6zE0VBjk73F6TS0-Y1EOIeqN" Center="25.30, 45.56" ZoomLevel="5.5" x:Name="myMap" Grid.ColumnSpan="2"/>
 		<StackPanel Orientation="Vertical" Opacity="0.7" HorizontalAlignment="Right" Margin="0,0,0,228" Width="42" Grid.ColumnSpan="2">
 			<Button x:Name="btnPlus" Click="Plus_Click" Margin="5,5,5,5">
 				<TextBlock Width="15" TextAlignment="Center"><Run Text="+"/></TextBlock>
