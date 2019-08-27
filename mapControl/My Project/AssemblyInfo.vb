@@ -42,7 +42,7 @@ Imports System.Windows
 
 
 'Se il progetto viene esposto a COM, il GUID seguente verrà utilizzato come ID della libreria dei tipi
-<Assembly: Guid("1246a149-e79e-42c0-886c-7e585c4d0afa")> 
+<Assembly: Guid("1246a149-e79e-42c0-886c-7e585c4d0afa")>
 
 ' Le informazioni sulla versione di un assembly sono costituite dai seguenti quattro valori:
 '
@@ -55,5 +55,5 @@ Imports System.Windows
 ' utilizzando l'asterisco (*) come descritto di seguito:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.0.0")> 
-<Assembly: AssemblyFileVersion("1.0.0.0")> 
+<Assembly: AssemblyVersion("1.1.0.0")>
+<Assembly: AssemblyFileVersion("1.1.0.0")>

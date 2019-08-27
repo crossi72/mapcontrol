@@ -43,6 +43,16 @@ Public Class mapControl
 	End Sub
 
 	''' <summary>
+	''' Set center of the map
+	''' </summary>
+	''' <param name="latidude">latidude of map center</param>
+	''' <param name="longitude">longitude of map center</param>
+	''' <remarks></remarks>
+	Public Sub SetMapCenter(latidude As Double, longitude As Double)
+		Me.mapSupport.SetMapCenter(Me.myMap, latidude, longitude)
+	End Sub
+
+	''' <summary>
 	''' add a polygon to a map
 	''' </summary>
 	''' <param name="polygonName">name of the object</param>

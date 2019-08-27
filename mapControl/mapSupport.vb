@@ -5,8 +5,8 @@ Public Class mapSupport
 #Region " Types "
 
 	Public Structure coordinate
-		Dim latitude As Double
-		Dim longitude As Double
+		Public latitude As Double
+		Public longitude As Double
 
 		Public Sub New(latitude As Double, longitude As Double)
 			Me.latitude = latitude
@@ -23,6 +23,16 @@ Public Class mapSupport
 #End Region
 
 #Region " Public Methods "
+
+	''' <summary>
+	''' Set center of the map
+	''' </summary>
+	''' <param name="myMap">map to draw</param>
+	''' <param name="latitude">latitude of map center</param>
+	''' <param name="longitude">longitude of map center</param>
+	Public Sub SetMapCenter(myMap As Map, latitude As Double, longitude As Double)
+		myMap.Center = New Location(latitude, longitude)
+	End Sub
 
 	''' <summary>
 	''' remove every object from the map
@@ -45,7 +55,7 @@ Public Class mapSupport
 	''' <param name="latitude2">latitude of second point</param>
 	''' <param name="longitude2">longitude of second point</param>
 	''' <remarks></remarks>
-	Public Sub AddLine(myMap As Map, polygonName As String, color As System.Windows.Media.Color, latitude1 As Double, longitude1 As Double, latitude2 As Double, longitude2 As Double)
+	Public Sub AddLine(myMap As Map, polygonName As String, color As Color, latitude1 As Double, longitude1 As Double, latitude2 As Double, longitude2 As Double)
 		Dim x, y As coordinate
 
 		x = New coordinate(latitude1, longitude1)
@@ -65,7 +75,7 @@ Public Class mapSupport
 	''' <param name="width">width of bar</param>
 	''' <param name="height">height of bar</param>
 	''' <remarks></remarks>
-	Public Sub AddBar(myMap As Map, polygonName As String, color As System.Windows.Media.Color, latitude As Double, longitude As Double, width As Double, height As Double)
+	Public Sub AddBar(myMap As Map, polygonName As String, color As Color, latitude As Double, longitude As Double, width As Double, height As Double)
 		Dim x, y, z, t As coordinate
 
 		x = New coordinate(latitude, longitude)
@@ -89,7 +99,7 @@ Public Class mapSupport
 	''' <param name="latitude3">latitude of third point</param>
 	''' <param name="longitude3">longitude of third point</param>
 	''' <remarks></remarks>
-	Public Sub AddTriangle(myMap As Map, polygonName As String, color As System.Windows.Media.Color, latitude1 As Double, longitude1 As Double, latitude2 As Double, longitude2 As Double, latitude3 As Double, longitude3 As Double)
+	Public Sub AddTriangle(myMap As Map, polygonName As String, color As Color, latitude1 As Double, longitude1 As Double, latitude2 As Double, longitude2 As Double, latitude3 As Double, longitude3 As Double)
 		AddPolygon(myMap, polygonName, color, New coordinate(latitude1, longitude1), New coordinate(latitude2, longitude2), New coordinate(latitude3, longitude3))
 	End Sub
 
@@ -103,7 +113,7 @@ Public Class mapSupport
 	''' <param name="y">coordinates of second point</param>
 	''' <param name="z">coordinates of third point</param>
 	''' <remarks></remarks>
-	Public Sub AddTriangle(myMap As Map, polygonName As String, color As System.Windows.Media.Color, x As coordinate, y As coordinate, z As coordinate)
+	Public Sub AddTriangle(myMap As Map, polygonName As String, color As Color, x As coordinate, y As coordinate, z As coordinate)
 		AddPolygon(myMap, polygonName, color, x, y, z)
 	End Sub
 
@@ -128,22 +138,22 @@ Public Class mapSupport
 	''' <param name="color">color of polygon</param>
 	''' <param name="coordinate">coordinates of vertices of polygon</param>
 	''' <remarks></remarks>
-	Public Sub AddPolygon(myMap As Map, polygonName As String, color As System.Windows.Media.Color, ParamArray coordinate() As coordinate)
+	Public Sub AddPolygon(myMap As Map, polygonName As String, color As Color, ParamArray coordinate() As coordinate)
 		Dim coord As coordinate
 
-		Dim polygon As New MapPolygon() With _
-		{.Fill = New System.Windows.Media.SolidColorBrush(color), _
-		  .Stroke = New System.Windows.Media.SolidColorBrush(color), _
-		  .StrokeThickness = 1, _
-		  .Opacity = 0.7, _
-		  .Locations = New LocationCollection() _
+		Dim polygon As New MapPolygon() With
+		{.Fill = New SolidColorBrush(color),
+		  .Stroke = New SolidColorBrush(color),
+		  .StrokeThickness = 1,
+		  .Opacity = 0.7,
+		  .Locations = New LocationCollection()
 		}
 
 		For Each coord In coordinate
 			polygon.Locations.Add(New Location(coord.latitude, coord.longitude))
 		Next
 
-		polygon.Name = polygonName
+		polygon.Name = polygonName.Replace(" ", "_").Replace("-", "_")
 
 		Me.polygonCollection.Add(polygon, polygonName)
 
